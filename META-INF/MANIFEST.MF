@@ -1,0 +1,5 @@
+Class-Path: javafx.controls.jar 
+ javafx.graphics.jar 
+ util.jar 
+Main-Class: strategyGround.main.StrategyGround
+

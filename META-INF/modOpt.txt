@@ -1,0 +1,5 @@
+-g
+--add-modules=strategyGroundMod
+-d mods/strategyGroundMod
+--source-path src/strategyGroundMod
+
