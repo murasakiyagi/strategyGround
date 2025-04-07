@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<!--上は触らない-->
+
+    <groupId>yagi.murasaki.land</groupId>
+    <artifactId>landPjct</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>land</name>
+    <packaging>jar</packaging>
+    
+
+<!--ここ大事。結構引っかかる-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>21</java.version>
+    </properties>
+
+<!--    <dependencyManagement>-->
+        <dependencies>
+
+            <dependency>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-controls</artifactId>
+    			<version>23.0.2</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>yagi.murasaki.utilCompo</groupId>
+                <artifactId>utilPjct</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+<!--                <scope>使用する場面main/testなど</scope>-->
+            </dependency>
+
+        </dependencies>
+<!--    </dependencyManagement>-->
+
+    <build>
+    	<plugins>
+    		<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-compiler-plugin</artifactId>
+    			<version>3.6.1</version>
+    			<configuration>
+    				<!-- ここでJavaのバージョンを設定する -->
+    				<source>${java.version}</source>
+    				<target>${java.version}</target>
+    			</configuration>
+    		</plugin>
+
+            <plugin>
+              <artifactId>maven-jar-plugin</artifactId>
+              <version>3.0.2</version>
+        		<configuration>
+        			<archive>
+<!--        				<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>-->
+        				<manifest>
+                            <mainClass>yagi.murasaki.land.Land</mainClass>
+        				</manifest>
+        			</archive>
+        		</configuration>
+            </plugin>
+
+            <plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-javadoc-plugin</artifactId>
+            	<version>3.11.2</version>
+    			<configuration>
+    			    <show>private</show>
+    			    <nohelp>true</nohelp>
+    			</configuration>
+            </plugin>
+
+
+    		<plugin>
+    			<groupId>org.openjfx</groupId>
+    			<artifactId>javafx-maven-plugin</artifactId>
+    			<version>0.0.8</version>
+
+    			<configuration>
+                    <mainClass>yagi.murasaki.land.Land</mainClass>
+    			</configuration>
+
+    		</plugin>
+
+
+    	</plugins>
+    </build>
+
+
+</project>
